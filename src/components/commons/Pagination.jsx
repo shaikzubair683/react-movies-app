@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 const Pagination = (props) => {
-    const { currentPage } = props;
-    const { pageSize, itemsCount } = props;
-    const pagesCount = Math.floor(itemsCount/pageSize);
+    const { currentPage, pageSize, itemsCount } = props;
+    const pagesCount = Math.ceil(itemsCount/pageSize);
     const pages = _.range(1,pagesCount+1);
     if(pagesCount ===1){
         return <></>
